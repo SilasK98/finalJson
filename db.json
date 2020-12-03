@@ -4,7 +4,7 @@
         "id": 11,
         "name": "GlobalActionScope",
         "helpText": "The Global Action Scope help",
-        "deprecated": false,
+        "deprecated": true,
         "parameters": {},
         "children": [
           {
