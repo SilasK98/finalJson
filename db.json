@@ -3,9 +3,6 @@
       {
         "id": 11,
         "name": "GlobalActionScope",
-        "helpText": "The Global Action Scope help",
-        "deprecated": true,
-        "parameters": {},
         "children": [
           {
             "id": 1,
@@ -55,9 +52,6 @@
       {
         "id": 11,
         "name": "Test",
-        "helpText": "The Test help",
-        "deprecated": false,
-        "parameters": {},
         "children": [
           {
             "id": 1,
