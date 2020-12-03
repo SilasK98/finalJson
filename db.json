@@ -1,128 +1,169 @@
 {
-  "keywords": [
-    {
-      "id": 11,
-      "name": "GlobalActionScope",
-      "helpText": "The Global Action Scope help",
-      "deprecated": false,
-      "parameters": {},
-      "children": [
-        {
-          "id": 1,
-          "name": "Eventually becomes",
-          "returnType": "void",
-          "helpText": "Result eventually becomes",
-          "deprecated": false,
-          "syntax": "|%1|eventually becomes|%2|",
-          "parameters": {
-            "%1": {
-              "label": "Action"
-            },
-            "%2": {
-              "label": "s"
+    "keywords": [
+      {
+        "id": 11,
+        "name": "GlobalActionScope",
+        "helpText": "The Global Action Scope help",
+        "deprecated": false,
+        "parameters": {},
+        "children": [
+          {
+            "id": 1,
+            "name": "Eventually becomes",
+            "returnType": "void",
+            "helpText": "Result eventually becomes",
+            "deprecated": false,
+            "syntax": "|%1|eventually becomes|%2|",
+            "parameters": {
+              "%1": {
+                "label": "Action"
+              },
+              "%2": {
+                "label": "s"
+              }
+            }
+          },
+          {
+            "id": 1,
+            "name": "Help Defined Actions",
+            "returnType": "boolean",
+            "helpText": "Help for defined actions",
+            "deprecated": false,
+            "syntax": "|help defined actions|",
+            "parameters": {}
+          },
+          {
+            "id": 1,
+            "name": "Help Json Keywords",
+            "returnType": "boolean",
+            "helpText": "Help for json keywords",
+            "deprecated": false,
+            "syntax": "|help json keywords|",
+            "parameters": {}
+          },
+          {
+            "id": 1,
+            "name": "Help Keywords",
+            "returnType": "boolean",
+            "helpText": "Help for keywords",
+            "deprecated": false,
+            "syntax": "|help keywords|",
+            "parameters": {}
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Test",
+        "helpText": "The Test help",
+        "deprecated": false,
+        "parameters": {},
+        "children": [
+          {
+            "id": 1,
+            "name": "Dummy string",
+            "returnType": "class java.lang.String",
+            "helpText": "A dummy for string",
+            "deprecated": false,
+            "syntax": "|dummy string|",
+            "parameters": {}
+          },
+          {
+            "id": 1,
+            "name": "Dummy void",
+            "returnType": "void",
+            "helpText": "A dummy for some void stuff",
+            "deprecated": false,
+            "syntax": "|dummy void|",
+            "parameters": {}
+          },
+          {
+            "id": 1,
+            "name": "Dummy boolean",
+            "returnType": "boolean",
+            "helpText": "A dummy boolean text",
+            "deprecated": false,
+            "syntax": "|dummy boolean|",
+            "parameters": {}
+          },
+          {
+            "id": 1,
+            "name": "Dummy boolean with parameter",
+            "returnType": "boolean",
+            "helpText": "A dummy text",
+            "deprecated": true,
+            "syntax": "|dummy|%1|with|%2|",
+            "parameters": {
+              "%1": {
+                "label": "Hallo1",
+                "keyword": "dettached"
+              },
+              "%2": {
+                "label": "Hallo2",
+                "options": [
+                  "true",
+                  "false"
+                ],
+                "keyword": "attached"
+              }
+            }
+          },
+          {
+            "id": 1,
+            "name": "Dummy void with parameter",
+            "returnType": "void",
+            "helpText": "A dummy for some void stuff with parameter",
+            "deprecated": false,
+            "syntax": "|dummy void with parameter|%1|",
+            "parameters": {
+              "%1": {
+                "label": "long",
+                "keyword": "attached"
+              }
             }
           }
-        },
-        {
-          "id": 1,
-          "name": "Help Defined Actions",
-          "returnType": "boolean",
-          "helpText": "Help for defined actions",
-          "deprecated": false,
-          "syntax": "|help defined actions|",
-          "parameters": {}
-        },
-        {
-          "id": 1,
-          "name": "Help Json Keywords",
-          "returnType": "boolean",
-          "helpText": "Help for json keywords",
-          "deprecated": false,
-          "syntax": "|help json keywords|",
-          "parameters": {}
-        },
-        {
-          "id": 1,
-          "name": "Help Keywords",
-          "returnType": "boolean",
-          "helpText": "Help for keywords",
-          "deprecated": false,
-          "syntax": "|help keywords|",
-          "parameters": {}
-        }
-      ]
+        ]
+      }
+    ],
+    "specialKeywords": 
+    [{
+        "name": "becomes",
+        "syntax": "|%1|becomes|%2|",
+        "parameters":{
+            "%1": {
+                "label": "parent keyword"
+            },
+            "%2": {
+                "label": "Baz"
+            }
+        }   
     },
     {
-      "id": 11,
-      "name": "Test",
-      "helpText": "The Test help",
-      "deprecated": false,
-      "parameters": {},
-      "children": [
-        {
-          "id": 1,
-          "name": "Dummy string",
-          "returnType": "class java.lang.String",
-          "helpText": "A dummy for string",
-          "deprecated": false,
-          "syntax": "|dummy string|",
-          "parameters": {}
-        },
-        {
-          "id": 1,
-          "name": "Dummy void",
-          "returnType": "void",
-          "helpText": "A dummy for some void stuff",
-          "deprecated": false,
-          "syntax": "|dummy void|",
-          "parameters": {}
-        },
-        {
-          "id": 1,
-          "name": "Dummy boolean",
-          "returnType": "boolean",
-          "helpText": "A dummy boolean text",
-          "deprecated": false,
-          "syntax": "|dummy boolean|",
-          "parameters": {}
-        },
-        {
-          "id": 1,
-          "name": "Dummy boolean with parameter",
-          "returnType": "boolean",
-          "helpText": "A dummy text",
-          "deprecated": true,
-          "syntax": "|dummy|%1|with|%2|",
-          "parameters": {
+        "name": "is",
+        "syntax": "|%1|is|%2|",
+        "parameters":{
             "%1": {
-              "label": "Hallo1",
-              "keyword": "dettached"
+                "label": "parent keyword"
+                },
+            "%2": {
+                "label": "Foo"
+            }
+        }
+    },
+    {
+        "name": "contains",
+        "syntax": "|%1|contains|%2|",
+        "parameters":{
+            "%1": {
+                "label": "parent keyword"
             },
             "%2": {
-              "label": "Hallo2",
-              "options": [
-                "true",
-                "false"
-              ],
-              "keyword": "attached"
+                "label": "Bar"
             }
-          }
-        },
-        {
-          "id": 1,
-          "name": "Dummy void with parameter",
-          "returnType": "void",
-          "helpText": "A dummy for some void stuff with parameter",
-          "deprecated": false,
-          "syntax": "|dummy void with parameter|%1|",
-          "parameters": {
-            "%1": {
-              "label": "long",
-              "keyword": "attached"
-            }
-          }
         }
-      ]
-    }
-  ]
-}
+    }]
+  }
+
+    
+
+  
