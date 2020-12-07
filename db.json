@@ -9,6 +9,15 @@
       "children": [
         {
           "id": "1-1",
+          "name": "Contains",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it contains the expected value.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {}
+        },
+        {
+          "id": "1-2",
           "name": "Help Json Keywords",
           "returnType": "boolean",
           "helpText": "Help for json keywords",
@@ -17,7 +26,7 @@
           "parameters": {}
         },
         {
-          "id": "1-2",
+          "id": "1-3",
           "name": "Help Keywords",
           "returnType": "boolean",
           "helpText": "Help for keywords",
@@ -26,7 +35,7 @@
           "parameters": {}
         },
         {
-          "id": "1-3",
+          "id": "1-4",
           "name": "Eventually becomes",
           "returnType": "void",
           "helpText": "Result eventually becomes",
@@ -42,7 +51,7 @@
           }
         },
         {
-          "id": "1-4",
+          "id": "1-5",
           "name": "Help Defined Actions",
           "returnType": "boolean",
           "helpText": "Help for defined actions",
@@ -96,20 +105,20 @@
         },
         {
           "id": "2-3",
-          "name": "Dummy string with parameter",
-          "returnType": "String",
-          "helpText": "A dummy for string with parameter",
-          "deprecated": false,
-          "syntax": "|dummy string|%1|",
-          "parameters": {}
-        },
-        {
-          "id": "2-4",
           "name": "Dummy void",
           "returnType": "void",
           "helpText": "A dummy for some void stuff",
           "deprecated": false,
           "syntax": "|dummy void|",
+          "parameters": {}
+        },
+        {
+          "id": "2-4",
+          "name": "Dummy string",
+          "returnType": "String",
+          "helpText": "A dummy for string",
+          "deprecated": false,
+          "syntax": "|dummy string|",
           "parameters": {}
         },
         {
@@ -120,26 +129,18 @@
           "deprecated": false,
           "syntax": "|dummy boolean|",
           "parameters": {}
+        },
+        {
+          "id": "2-6",
+          "name": "Dummy string with parameter",
+          "returnType": "String",
+          "helpText": "A dummy for string with parameter",
+          "deprecated": false,
+          "syntax": "|dummy string|%1|",
+          "parameters": {}
         }
       ]
     }
   ],
-  "specialKeywords": [
-    {
-      "name": "Contains",
-      "returnType": "void",
-      "helpText": "Take the result of the action and see whether it contains the expected value.",
-      "deprecated": false,
-      "syntax": "",
-      "parameters": {}
-    },
-    {
-      "name": "Dummy string",
-      "returnType": "String",
-      "helpText": "A dummy for string",
-      "deprecated": false,
-      "syntax": "|dummy string|",
-      "parameters": {}
-    }
-  ]
+  "specialKeywords": []
 }
