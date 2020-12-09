@@ -3,7 +3,6 @@
     {
       "id": "1",
       "name": "GlobalActionScope",
-      "helpText": "The Global Action Scope help",
       "deprecated": false,
       "parameters": {},
       "children": [
@@ -13,72 +12,1311 @@
           "returnType": "void",
           "helpText": "Take the result of the action and see whether it contains the expected value.",
           "deprecated": false,
-          "syntax": "",
-          "parameters": {}
-        },
-        {
-          "id": "1-2",
-          "name": "Help Json Keywords",
-          "returnType": "boolean",
-          "helpText": "Help for json keywords",
-          "deprecated": false,
-          "syntax": "|help json keywords|",
-          "parameters": {}
-        },
-        {
-          "id": "1-3",
-          "name": "Help Keywords",
-          "returnType": "boolean",
-          "helpText": "Help for keywords",
-          "deprecated": false,
-          "syntax": "|help keywords|",
-          "parameters": {}
-        },
-        {
-          "id": "1-4",
-          "name": "Eventually becomes",
-          "returnType": "void",
-          "helpText": "Result eventually becomes",
-          "deprecated": false,
-          "syntax": "|%1|eventually becomes|%2|",
+          "syntax": "|%1|contains|%2|",
           "parameters": {
             "%1": {
               "label": "Action"
             },
             "%2": {
-              "label": "s"
+              "label": "Expected value"
             }
           }
         },
         {
-          "id": "1-5",
+          "id": "1-2",
+          "name": "Help Json Keywords",
+          "returnType": "boolean",
+          "deprecated": false,
+          "syntax": "|help json keywords|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-3",
+          "name": "Help Keywords",
+          "returnType": "boolean",
+          "helpText": "Show all the actions in scope after the current table. This has been extended by netcare.",
+          "deprecated": false,
+          "syntax": "|help keywords|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-4",
           "name": "Help Defined Actions",
           "returnType": "boolean",
-          "helpText": "Help for defined actions",
+          "helpText": "Shows a table of all defined actions that are available with its parameters, author and note. |define actions at|...| must be used before.",
           "deprecated": false,
           "syntax": "|help defined actions|",
-          "parameters": {}
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-5",
+          "name": "get",
+          "returnType": "String",
+          "helpText": "Returns the string, which is handy for use with a special action, such as show.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027get\u0027\u0027|string|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-6",
+          "name": "log",
+          "returnType": "void",
+          "helpText": "Logs the result of the action to the current (old-style) log file, if any.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-7",
+          "name": "matches",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it matches the regular expression.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027matches\u0027\u0027\u0027|regular expression|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-8",
+          "name": "file",
+          "returnType": "FileHandler",
+          "helpText": "Access the given file and allow actions on it in the rest of the table.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027file\u0027\u0027|absolute file name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-9",
+          "name": "help",
+          "returnType": "boolean",
+          "helpText": "Show all the actions in scope after the current table.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-10",
+          "name": "ignore",
+          "returnType": "CommentTraverse",
+          "helpText": "Place this in the first row of a table that is to be ignored (not run at all).",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-11",
+          "name": "loop",
+          "returnType": "Loop",
+          "helpText": "Treats the rest of a table as a while loop.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027loop\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-12",
+          "name": "comment",
+          "returnType": "CommentTraverse",
+          "helpText": "Place this in the first row of a table that is to be ignored (not run at all).",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-13",
+          "name": "to",
+          "returnType": "String",
+          "helpText": "Returns the string, which is handy for use with a special action, such as set.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027to\u0027\u0027|string|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-14",
+          "name": "testResults",
+          "returnType": "String",
+          "helpText": "Returns the test results. Are the test results at the place used. Can be used in checks or variables.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027test results\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-15",
+          "name": "defineActionsSlowlyAt",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-16",
+          "name": "clearDefinedActions",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-17",
+          "name": "harvestUsingPatternFrom",
+          "returnType": "boolean",
+          "helpText": "Uses the regular expression to extract out one or more dynamic variables from the text, which is handy when text needs to be pulled apart to get at the required data.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027harvest\u0027\u0027|dynamic variables|\u0027\u0027using pattern\u0027\u0027|regular expression|\u0027\u0027from\u0027\u0027|text|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-18",
+          "name": "setSystemPropertyTo",
+          "returnType": "boolean",
+          "helpText": "Set the Java system property, and the dynamic variable of the same name, to the value. Can be used to affect an application that is still be created.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027set system property\u0027\u0027|property name|\u0027\u0027to\u0027\u0027|value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-19",
+          "name": "defineActionsAtFrom",
+          "returnType": "void",
+          "helpText": "Load the defined actions from the given page and any sub-pages, taking account of the folder location.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027define actions at\u0027\u0027|page name|\u0027\u0027from\u0027\u0027|folder location|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-20",
+          "name": "clearDynamicVariables",
+          "returnType": "boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-21",
+          "name": "addDynamicVariablesFromFile",
+          "returnType": "boolean",
+          "helpText": "Load the given property file and set dynamic variables from the properties (but it is usually better to set them on a page).",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027add dynamic variables from file\u0027\u0027|filename|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-22",
+          "name": "setRuntimeContext",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-23",
+          "name": "setDynamicVariable",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-24",
+          "name": "setExpandDefinedActions",
+          "returnType": "void",
+          "helpText": "If set to true, expand calls to defined actions regardless.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027set expand defined actions\u0027\u0027|true or false|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-25",
+          "name": "toExpandDefinedActions",
+          "returnType": "boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-26",
+          "name": "getDynamicVariables",
+          "returnType": "DynamicVariables",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-27",
+          "name": "getSystemUnderTest",
+          "returnType": "Object",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-28",
+          "name": "getDynamicVariable",
+          "returnType": "Object",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-29",
+          "name": "addDynamicVariablesFromUnicodeFile",
+          "returnType": "void",
+          "helpText": "Load the given property file, respecting unicode, and set dynamic variables from the properties (but it is usually better to set them on a page).",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027add dynamic variables from unicode file\u0027\u0027|filename|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-30",
+          "name": "logText",
+          "returnType": "void",
+          "helpText": "Log the message to the log4j log.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027log text\u0027\u0027|message|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-31",
+          "name": "xref",
+          "returnType": "CrossReferenceFixture",
+          "helpText": "Produce a cross reference of all the defined actions in the selected suite",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027xref\u0027\u0027|page name of a defined action suite|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-32",
+          "name": "becomesTimeout",
+          "returnType": "void",
+          "helpText": "Change the timeout period (in ms) for becomes.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027becomes timeout\u0027\u0027|timeout|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-33",
+          "name": "becomesTimeout",
+          "returnType": "int",
+          "helpText": "What is the timeout period (in ms) for becomes?",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-34",
+          "name": "sleepFor",
+          "returnType": "boolean",
+          "helpText": "Sleep for the given time in millseconds (the becomes special action may be better).",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027sleep for\u0027\u0027|time in milliseconds|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-35",
+          "name": "defineAction",
+          "returnType": "DefineAction",
+          "helpText": "Define a new action of that name and as given by the rest of the table.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-36",
+          "name": "defineAction",
+          "returnType": "DefineAction",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-37",
+          "name": "defineActionsAt",
+          "returnType": "void",
+          "helpText": "Load the defined actions from the given page and any sub-pages.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027define actions at\u0027\u0027|page name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-38",
+          "name": "setVariables",
+          "returnType": "SetVariableTraverse",
+          "helpText": "Set several dynamic variables (optionally with comment) at once in a storytest.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027set variables\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-39",
+          "name": "abandonStorytest",
+          "returnType": "void",
+          "helpText": "Stop running the storytest immediately, so you can effectively ignore the rest of a storytest while exploring a problem.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-40",
+          "name": "selectRandomly",
+          "returnType": "RandomSelectTraverse",
+          "helpText": "Randomly select one of the values in the rows of the rest of the table.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027select randomly\u0027\u0027|dynamic variable name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-41",
+          "name": "stopWatch",
+          "returnType": "long",
+          "helpText": "Stop the stopwatch, and return how long it has been going (in ms), so you can cause the storytest to fail if it\u0027s been too long.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-42",
+          "name": "setFitVariable",
+          "returnType": "void",
+          "helpText": "Set the Fit variable to the value, so a value from FitLibrary can be used in a Fit table.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027set fit variable\u0027\u0027|variable name|value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-43",
+          "name": "getSymbolNamed",
+          "returnType": "Object",
+          "helpText": "Get the value of the Fit variable, so it can be used with a FitLibrary table.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027get symbol named\u0027\u0027|variable name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-44",
+          "name": "logMessage",
+          "returnType": "void",
+          "helpText": "Log the message to an obscure logging process (this needs a better explanation).",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027log message\u0027\u0027|message|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-45",
+          "name": "startStopWatch",
+          "returnType": "void",
+          "helpText": "Start the stopwatch, so it can be used to fail a storytest if things take too long (with |stop stop watch|).",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-46",
+          "name": "putTimeout",
+          "returnType": "void",
+          "helpText": "Change the timeout period (in ms) for the named timeout.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027put timeout\u0027\u0027|timeout name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-47",
+          "name": "recordToFile",
+          "returnType": "void",
+          "helpText": "Writes the dynamic variables to the file (this needs a better explanation).",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027record to file\u0027\u0027|file name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-48",
+          "name": "getTimeout",
+          "returnType": "int",
+          "helpText": "What is the timeout period (in ms) for the named timeout?",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027timeout\u0027\u0027|timeout name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-49",
+          "name": "startLogging",
+          "returnType": "void",
+          "helpText": "Starts an obscure logging process to the file (this needs a better explanation).",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027start logging\u0027\u0027|file name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-50",
+          "name": "note",
+          "returnType": "void",
+          "helpText": "Add text to defined actions to show it in |help defined actions|.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027note\u0027\u0027|text|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-51",
+          "name": "setStopOnError",
+          "returnType": "void",
+          "helpText": "Alter whether or not a storytest will stop on error, to avoid the extra time and errors.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027set stop on error\u0027\u0027|true or false|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-52",
+          "name": "show",
+          "returnType": "void",
+          "helpText": "Show the result of the action in a cell added to the row.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-53",
+          "name": "show",
+          "returnType": "void",
+          "helpText": "Show the value of the action is a cell added to the row.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-54",
+          "name": "select",
+          "returnType": "void",
+          "helpText": "Select the named object so that it\u0027s actions take priority over others.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027select\u0027\u0027|name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-55",
+          "name": "showAsAfterTable",
+          "returnType": "void",
+          "helpText": "Show the message in a titled area that\u0027s added after the table.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027\u0027show\u0027\u0027\u0027|title|\u0027\u0027\u0027as\u0027\u0027\u0027|message|\u0027\u0027\u0027after table\u0027\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-56",
+          "name": "recordVariableWithValueInClearedPage",
+          "returnType": "boolean",
+          "helpText": "Defines variable with value in the given page. Clears the page contents before.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027record variable\u0027\u0027|varibaleName|\u0027\u0027with value\u0027\u0027|variableValue|\u0027\u0027in cleared page\u0027\u0027|absolutePagePath|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-57",
+          "name": "autoTranslateDefinedActionParameters",
+          "returnType": "void",
+          "helpText": "Allow for old-style use of parameters in defined actions, with no @{}.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-58",
+          "name": "deprecated",
+          "returnType": "void",
+          "helpText": "Add deprecated to defined actions to strike them through in the |\u0027\u0027help defined actions\u0027\u0027|.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027deprecated\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-59",
+          "name": "not",
+          "returnType": "Boolean",
+          "helpText": "Passes if the action fails or gives an error. Fails otherwise. Use notTrue if errors should be shown.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-60",
+          "name": "reject",
+          "returnType": "boolean",
+          "helpText": "Passes if the action fails or gives an error. Fails otherwise. Use notTrue if errors should be shown.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-61",
+          "name": "logged",
+          "returnType": "void",
+          "helpText": "Logs the result of the action to log4j.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-62",
+          "name": "slack",
+          "returnType": "Slack",
+          "helpText": "Sends a Slack message via the configured WebHooks.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027slack\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-63",
+          "name": "relativeFile",
+          "returnType": "RelativeFileHandler",
+          "helpText": "Access the given file and allow actions on it in the rest of the table.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027relative file\u0027\u0027|relative file name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-64",
+          "name": "loopWithTimeout",
+          "returnType": "Loop",
+          "helpText": "Treats the rest of a table as a while loop. Will automatically stop when timeout has been reached. The timeout has to be given in milliseconds.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027loop with timeout\u0027\u0027|timeout in milliseconds|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-65",
+          "name": "notTrue",
+          "returnType": "boolean",
+          "helpText": "Passes if the action fails and vice versa. Any errors are shown.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-66",
+          "name": "condition",
+          "returnType": "Condition",
+          "helpText": "Treats the rest of a table as condition.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027condition\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-67",
+          "name": "actualGroups",
+          "returnType": "String",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-68",
+          "name": "author",
+          "returnType": "void",
+          "helpText": "Add authors to defined actions to show it in |help defined actions|.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027author\u0027\u0027|text|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-69",
+          "name": "helpWith",
+          "returnType": "boolean",
+          "helpText": "Show all the actions in scope that contain the string after the current table.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027help with\u0027\u0027|text|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-70",
+          "name": "showAfter",
+          "returnType": "void",
+          "helpText": "Show the value of the action in a folding area added after the table.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-71",
+          "name": "readCsv",
+          "returnType": "ReadCSV",
+          "helpText": "Uses the rest of the table to read values and use them as dynamic variables from a CSV file.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027read csv\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-72",
+          "name": "showAfterAs",
+          "returnType": "void",
+          "helpText": "Show the value of the action in a titled folding area added after the table.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027\u0027show after as\u0027\u0027\u0027|action...|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-73",
+          "name": "getStopWatch",
+          "returnType": "StopWatch",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-74",
+          "name": "comparison",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-75",
+          "name": "withLog4j",
+          "returnType": "ConfigureLogger",
+          "helpText": "Starts a table for configuring log4j.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-76",
+          "name": "alsoRun",
+          "returnType": "void",
+          "helpText": "The object that results from the action is added to the scope, so actions can be called on it in future.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-77",
+          "name": "ensure",
+          "returnType": "Boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-78",
+          "name": "asString",
+          "returnType": "StringAdapter",
+          "helpText": "The object that results from the action can now be tested as a String.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027\u0027as string\u0027\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-79",
+          "name": "loopCsv",
+          "returnType": "LoopCSV",
+          "helpText": "Uses the rest of the table to setup and loop a CSV file.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027loop csv\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-80",
+          "name": "randomBetweenAnd",
+          "returnType": "int",
+          "helpText": "Returns a random number beween min and max. Can be used to select a random xpath for example.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027random between\u0027\u0027|min|\u0027\u0027and\u0027\u0027|max|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-81",
+          "name": "showEscaped",
+          "returnType": "void",
+          "helpText": "Show the value of the action in a cell added to the row. But the text is escaped so that any tags, etc will be visible.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-82",
+          "name": "propertyFile",
+          "returnType": "PropertyDynamicVariableFileHandler",
+          "helpText": "Access the given property file and allow actions on it in the rest of the table.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027property file\u0027\u0027|absolute file name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-83",
+          "name": "alsoRunAs",
+          "returnType": "void",
+          "helpText": "The object that results from the action is added to the scope, so actions can be called on it in future and it can be selected by name.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027also run as\u0027\u0027\u0027|name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-84",
+          "name": "zeroReportCounts",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-85",
+          "name": "expectedGroups",
+          "returnType": "String",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-86",
+          "name": "showPredefined",
+          "returnType": "void",
+          "helpText": "Show the value of the action is a cell added to the row. The text retains its layout across lines.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-87",
+          "name": "recordInPage",
+          "returnType": "boolean",
+          "helpText": "Saves value in the given page. The variable definition gets appended to the page contents.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027record\u0027\u0027|value|\u0027\u0027in page\u0027\u0027|absolutePagePath|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-88",
+          "name": "recordLineInPage",
+          "returnType": "boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-89",
+          "name": "parseObject",
+          "returnType": "Object",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-90",
+          "name": "doesNotMatch",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it does not match the regular expression.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027does not match\u0027\u0027\u0027|regular expression|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-91",
+          "name": "suite",
+          "returnType": "SuiteFixture",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-92",
+          "name": "ignoreTable",
+          "returnType": "CommentTraverse",
+          "helpText": "Place this in the first row of a table that is to be ignored (not run at all).",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-93",
+          "name": "removeFile",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-94",
+          "name": "ignored",
+          "returnType": "CommentTraverse",
+          "helpText": "Place this in the first row of a table that is to be ignored (not run at all). The table is coloured to show it has been ignored.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-95",
+          "name": "lessThan",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it is less than the expected value.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027\u0026lt;\u0027\u0027\u0027|expected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-96",
+          "name": "lessThanEquals",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it is less than or equal to the expected value.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027\u0026lt;\u003d\u0027\u0027\u0027|expected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-97",
+          "name": "doesNotContain",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it does not contain the unexpected value.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027does not contain\u0027\u0027\u0027|unexpected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-98",
+          "name": "greaterThan",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it is greater than the expected value.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027\u0026gt;\u0027\u0027\u0027|expected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-99",
+          "name": "showWithTags",
+          "returnType": "void",
+          "helpText": "Show the value of the action in a cell added to the row. The tags will be visible.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-100",
+          "name": "forEachIn",
+          "returnType": "ForEachFixtureNetcare",
+          "helpText": "Iterates the following row with action over comma-separated values. See more",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027for each\u0027\u0027|iterator name|\u0027\u0027in\u0027\u0027|comma-separated values|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-101",
+          "name": "knownIssue",
+          "returnType": "KnownIssue",
+          "helpText": "The rest of a table will be treated as known issues and marked as warnings instead of fails",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027known issue\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-102",
+          "name": "containsIgnoreCase",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it contains the expected value (case insensitive).",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027contains ignore case\u0027\u0027\u0027|expected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-103",
+          "name": "eventuallyContains",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it eventually contains the expected value. It fails if the timeout period for becomes is exceeded.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027eventually contains\u0027\u0027\u0027|expected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-104",
+          "name": "continueStorytest",
+          "returnType": "void",
+          "helpText": "Continues test if it was abandoned before. This is useful at the beginning of a TearDown.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027continue storytest\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-105",
+          "name": "relativePropertyFile",
+          "returnType": "RelativePropertyDynamicVariableFileHandler",
+          "helpText": "Access the given property file and allow actions on it in the rest of the table.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027relative property file\u0027\u0027|relative file name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-106",
+          "name": "informOnFailOrErrorInStorytest",
+          "returnType": "void",
+          "helpText": "The action must return an object that implements OnError.\nOnce there are fails or errors in a storytest, the method stopOnError() is called with the counts after each action.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-107",
+          "name": "withFitLibraryLogger",
+          "returnType": "ConfigureLogger",
+          "helpText": "Starts a table for accessing the FitLibrary-specific logger.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-108",
+          "name": "eventuallyMatches",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it eventually matches the regular expression. It fails if the timeout period for becomes is exceeded.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027eventually matches\u0027\u0027\u0027|regular expression|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-109",
+          "name": "greaterThanEquals",
+          "returnType": "void",
+          "helpText": "Take the result of the action and see whether it is greater than or equal to the expected value.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027\u0026gt;\u003d\u0027\u0027\u0027|expected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-110",
+          "name": "configureFitLibrary",
+          "returnType": "Configuration",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-111",
+          "name": "withFixturingLogger",
+          "returnType": "ConfigureLogger",
+          "helpText": "Starts a table for accessing the Fixturing-specific logger.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-112",
+          "name": "setVariablesWithComment",
+          "returnType": "SetVariableTraverse",
+          "helpText": "Set several dynamic variables (optionally with comment) at once in a storytest.",
+          "deprecated": true,
+          "syntax": "|\u0027\u0027set variables with comment\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-113",
+          "name": "runtimeConfiguration",
+          "returnType": "ConfigurationExtended",
+          "helpText": "Starts a table for changing configuation of FitLibrary. See more under \"Actions for class GlobalActionScope\"",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027runtime configuration\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-114",
+          "name": "recordVariableWithValueInPage",
+          "returnType": "boolean",
+          "helpText": "Defines variable with value in the given page. The variable definition gets appended to the page contents.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027record variable\u0027\u0027|varibaleName|\u0027\u0027with value\u0027\u0027|variableValue|\u0027\u0027in page\u0027\u0027|absolutePagePath|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-115",
+          "name": "recordFitnesseVariableInPage",
+          "returnType": "boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-116",
+          "name": "helpDefinedActions",
+          "returnType": "boolean",
+          "helpText": "Same as |help defined actions| but with the possibility to shorten the page names by this prefix.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027help defined actions\u0027\u0027|prefix|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-117",
+          "name": "forEachBetweenAnd",
+          "returnType": "ForEachFixtureNetcare",
+          "helpText": "Iterates the following row with action over index start to end. See more",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027for each\u0027\u0027|iterator name|\u0027\u0027between\u0027\u0027|start|\u0027\u0027and\u0027\u0027|end|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "1-118",
+          "name": "recordInClearedPage",
+          "returnType": "boolean",
+          "helpText": "Saves value in the given page. Clears the page contents before.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027record\u0027\u0027|value|\u0027\u0027in cleared page\u0027\u0027|absolutePagePath|",
+          "parameters": {},
+          "children": []
         }
       ]
     },
     {
       "id": "2",
-      "name": "Test",
-      "helpText": "The Test help",
+      "name": "GlobalActionScopeForWeb",
       "deprecated": false,
       "parameters": {},
       "children": [
         {
           "id": "2-1",
+          "name": "withDate",
+          "returnType": "CreateDate",
+          "helpText": "Create some dates to use in the storytest, through actions that follow in the table.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-2",
+          "name": "withHttpClient",
+          "returnType": "HttpClientFixture",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-3",
+          "name": "withShell",
+          "returnType": "ShellFixture",
+          "helpText": "Test an application through the command line.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-4",
+          "name": "withSpider",
+          "returnType": "SpiderFixture",
+          "helpText": "Test a web application through one of several browsers.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-5",
+          "name": "withXml",
+          "returnType": "XmlDoFixture",
+          "helpText": "Test some xml.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-6",
+          "name": "withREST",
+          "returnType": "RestFixture",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-7",
+          "name": "withKafka",
+          "returnType": "KafkaFixture",
+          "helpText": "Testing with Kafka",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027with kafka\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-8",
+          "name": "withEmail",
+          "returnType": "ElectronicMail",
+          "helpText": "Test email.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-9",
+          "name": "withTemplate",
+          "returnType": "TemplateFixture",
+          "helpText": "Use a template to create a file.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-10",
+          "name": "withRest",
+          "returnType": "RestFixture",
+          "helpText": "Test REST interfaces.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027with rest\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-11",
+          "name": "withPDF",
+          "returnType": "PDFDocument",
+          "helpText": "Test the contents of a PDF",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027with PDF\u0027\u0027|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-12",
+          "name": "withRecordingWebServices",
+          "returnType": "RecordingWebServicesFixture",
+          "helpText": "Record the activity of a web services.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-13",
+          "name": "withProxyServerForTesting",
+          "returnType": "ProxyServerFixture",
+          "helpText": "Run a proxy server to support testing.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-14",
+          "name": "withMockWebServices",
+          "returnType": "MockWebServicesFixture",
+          "helpText": "Mock one or more web services.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-15",
+          "name": "withWebServerForTesting",
+          "returnType": "WebServerForTestingFixture",
+          "helpText": "Run a web server to support testing.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "2-16",
+          "name": "withWebServicesClient",
+          "returnType": "WebServicesClientFixture",
+          "helpText": "Test a web service.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Test",
+      "deprecated": false,
+      "parameters": {},
+      "children": [
+        {
+          "id": "3-1",
+          "name": "Dummy string with parameter",
+          "returnType": "String",
+          "deprecated": false,
+          "syntax": "|dummy string|%1|",
+          "parameters": {}
+        },
+        {
+          "id": "3-2",
           "name": "Dummy boolean with parameter",
           "returnType": "boolean",
-          "helpText": "A dummy text",
           "deprecated": true,
           "syntax": "|dummy|%1|with|%2|",
           "parameters": {
             "%1": {
               "label": "Hallo1",
-              "keyword": "dettached"
+              "keyword": "detached"
             },
             "%2": {
               "label": "Hallo2",
@@ -87,60 +1325,583 @@
                 "false"
               ]
             }
-          }
+          },
+          "children": []
         },
         {
-          "id": "2-2",
+          "id": "3-3",
           "name": "Dummy void with parameter",
           "returnType": "void",
-          "helpText": "A dummy for some void stuff with parameter",
           "deprecated": false,
           "syntax": "|dummy void with parameter|%1|",
           "parameters": {
             "%1": {
-              "label": "long",
-              "keyword": "attached"
+              "label": "long"
             }
           }
         },
         {
-          "id": "2-3",
-          "name": "Dummy void",
-          "returnType": "void",
-          "helpText": "A dummy for some void stuff",
-          "deprecated": false,
-          "syntax": "|dummy void|",
-          "parameters": {}
-        },
-        {
-          "id": "2-4",
+          "id": "3-4",
           "name": "Dummy string",
           "returnType": "String",
-          "helpText": "A dummy for string",
           "deprecated": false,
           "syntax": "|dummy string|",
           "parameters": {}
         },
         {
-          "id": "2-5",
+          "id": "3-5",
           "name": "Dummy boolean",
           "returnType": "boolean",
-          "helpText": "A dummy boolean text",
           "deprecated": false,
           "syntax": "|dummy boolean|",
-          "parameters": {}
+          "parameters": {},
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "DoTraverse",
+      "deprecated": false,
+      "parameters": {},
+      "children": [
+        {
+          "id": "4-1",
+          "name": "equals",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
         },
         {
-          "id": "2-6",
-          "name": "Dummy string with parameter",
-          "returnType": "String",
-          "helpText": "A dummy for string with parameter",
+          "id": "4-2",
+          "name": "check",
+          "returnType": "TwoStageSpecial",
+          "helpText": "Check if the result of the action is the expected value.",
           "deprecated": false,
-          "syntax": "|dummy string|%1|",
-          "parameters": {}
+          "syntax": "|\u0027\u0027\u0027check\u0027\u0027\u0027|action...|expected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-3",
+          "name": "start",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-4",
+          "name": "set",
+          "returnType": "TwoStageSpecial",
+          "helpText": "Set the dynamic variable to the result of the action (or the expression when the action starts with |\u003d|).",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027\u0027set\u0027\u0027\u0027|dynamic variable name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-5",
+          "name": "constraint",
+          "returnType": "ConstraintTraverse",
+          "helpText": "Treat the rest of the table as a constraint table.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-6",
+          "name": "file",
+          "returnType": "FileHandler",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-7",
+          "name": "is",
+          "returnType": "void",
+          "helpText": "Check if the result of the action is the expected value.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027is\u0027\u0027\u0027|expected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-8",
+          "name": "defineActionsSlowlyAt",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-9",
+          "name": "clearDefinedActions",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-10",
+          "name": "findMethodFromRow",
+          "returnType": "ICalledMethodTarget",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-11",
+          "name": "expectedTestResults",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-12",
+          "name": "harvestUsingPatternFrom",
+          "returnType": "boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-13",
+          "name": "findMethodFromRow222",
+          "returnType": "ICalledMethodTarget",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-14",
+          "name": "failingConstraint",
+          "returnType": "ConstraintTraverse",
+          "helpText": "Treat the rest of the table as a failing constraint table.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-15",
+          "name": "setSystemPropertyTo",
+          "returnType": "boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-16",
+          "name": "interpretRowBeforeWrapping",
+          "returnType": "TypedObject",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-17",
+          "name": "defineActionsAtFrom",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-18",
+          "name": "clearDynamicVariables",
+          "returnType": "boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-19",
+          "name": "addDynamicVariablesFromFile",
+          "returnType": "boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-20",
+          "name": "methodsThatAreVisible",
+          "returnType": "List",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-21",
+          "name": "setExpandDefinedActions",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-22",
+          "name": "toExpandDefinedActions",
+          "returnType": "boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-23",
+          "name": "interpretAfterFirstRow",
+          "returnType": "Object",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-24",
+          "name": "addDynamicVariablesFromUnicodeFile",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-25",
+          "name": "logText",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-26",
+          "name": "xref",
+          "returnType": "CrossReferenceFixture",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-27",
+          "name": "addNamed",
+          "returnType": "void",
+          "helpText": "Take the result of the action (or an instance of the class) and add it the current scope, with the given name. This is one way of allowing several objects to be used in a storytest at the same time.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027\u0027add named\u0027\u0027\u0027|name|action... or class name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-28",
+          "name": "becomesTimeout",
+          "returnType": "int",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-29",
+          "name": "becomesTimeout",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-30",
+          "name": "calculate",
+          "returnType": "CalculateTraverse",
+          "helpText": "Treat the rest of the table as a calculate table.",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-31",
+          "name": "callMethodInRow",
+          "returnType": "Object",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-32",
+          "name": "operatorCell",
+          "returnType": "Cell",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-33",
+          "name": "sleepFor",
+          "returnType": "boolean",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-34",
+          "name": "defineAction",
+          "returnType": "DefineAction",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-35",
+          "name": "defineAction",
+          "returnType": "DefineAction",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-36",
+          "name": "setSymbolNamed",
+          "returnType": "TwoStageSpecial",
+          "helpText": "Set the Fit symbol to the result of the action.",
+          "deprecated": false,
+          "syntax": "|\u0027\u0027\u0027set symbol named\u0027\u0027\u0027|symbol name|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-37",
+          "name": "becomes",
+          "returnType": "void",
+          "helpText": "Check if the result of the action eventually becomes the expected value. It fails after the timeout period otherwise.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027becomes\u0027\u0027\u0027|expected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-38",
+          "name": "showDot",
+          "returnType": "void",
+          "helpText": "Treat the result of the action as a Dot specification, use Dot to create an image, and include it in the report.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-39",
+          "name": "optionally",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-40",
+          "name": "defineActionsAt",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-41",
+          "name": "oo",
+          "returnType": "Object",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-42",
+          "name": "setVariables",
+          "returnType": "SetVariableTraverse",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-43",
+          "name": "abandonStorytest",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-44",
+          "name": "selectRandomly",
+          "returnType": "RandomSelectTraverse",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-45",
+          "name": "stopWatch",
+          "returnType": "long",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-46",
+          "name": "setFitVariable",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-47",
+          "name": "getSymbolNamed",
+          "returnType": "Object",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-48",
+          "name": "logMessage",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-49",
+          "name": "isNot",
+          "returnType": "void",
+          "helpText": "Check if the result of the action is not the unexpected value.",
+          "deprecated": false,
+          "syntax": "|action...|\u0027\u0027\u0027is not\u0027\u0027\u0027|unexpected value|",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-50",
+          "name": "startStopWatch",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-51",
+          "name": "addGlobal",
+          "returnType": "void",
+          "helpText": "Take the result of the action (or an instance of the class) and add it as a new global to the scope.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-52",
+          "name": "putTimeout",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-53",
+          "name": "recordToFile",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-54",
+          "name": "fitHandler",
+          "returnType": "FitHandler",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-55",
+          "name": "interpretInFlow",
+          "returnType": "Object",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-56",
+          "name": "getTimeout",
+          "returnType": "int",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-57",
+          "name": "startLogging",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-58",
+          "name": "note",
+          "returnType": "void",
+          "helpText": "Ignore the rest of the row.",
+          "deprecated": false,
+          "syntax": "",
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-59",
+          "name": "interpretRow",
+          "returnType": "TypedObject",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-60",
+          "name": "setStopOnError",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
+        },
+        {
+          "id": "4-61",
+          "name": "show",
+          "returnType": "void",
+          "deprecated": false,
+          "parameters": {},
+          "children": []
         }
       ]
     }
   ],
-  "specialKeywords": []
+  "specialKeywords": [
+    {
+      "name": "Eventually becomes",
+      "returnType": "void",
+      "helpText": "Take the result of the action and see whether it eventually becomes the expected value. It fails if the timeout period for becomes is exceeded.",
+      "deprecated": false,
+      "syntax": "|%1|eventually becomes|%2|",
+      "parameters": {
+        "%1": {
+          "label": "Action"
+        },
+        "%2": {
+          "label": "Expected value"
+        }
+      }
+    },
+    {
+      "name": "\u0027Dummy void",
+      "returnType": "void",
+      "deprecated": false,
+      "syntax": "|\u0027dummy void\u0027|",
+      "parameters": {},
+      "children": []
+    }
+  ]
 }
